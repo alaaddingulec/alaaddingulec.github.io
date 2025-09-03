@@ -1,1 +1,8 @@
+<div class="news-ticker">
+  <marquee>
+    {% for post in site.posts limit:5 %}
+      {{ post.date | date: "%d %B %Y" }} — <a href="{{ post.url | relative_url }}">{{ post.title }}</a> &nbsp; | &nbsp;
+    {% endfor %}
+  </marquee>
+</div>
 
