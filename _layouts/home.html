@@ -2,50 +2,41 @@
 layout: default
 ---
 
-{% include hero-slider.html %}
+{% include hero.html %}
 
-<section class="strip stats">
-  <div class="container grid-4">
-    <div><h3>20+</h3><p>Kurumsal Proje</p></div>
-    <div><h3>10K+</h3><p>Aktif Kullanıcı</p></div>
-    <div><h3>99.9%</h3><p>Uptime</p></div>
-    <div><h3>7/24</h3><p>Destek</p></div>
-  </div>
-</section>
-
-<section class="container section">
-  <h2 class="section-title">Öne Çıkan Çözümler</h2>
+<section class="container section solutions-preview">
+  <h2>Çözümlerimiz</h2>
   <div class="grid-3 cards">
     <article class="card">
-      <img src="{{ '/assets/images/solution-uc.svg' | relative_url }}" alt="Çağrı Merkezi Çözümü">
-      <h3>IP Çağrı Merkezi</h3>
-      <p>Ölçeklenebilir VoIP altyapısı, IVR ve akıllı yönlendirme ile müşteri deneyimini iyileştirin.</p>
+      <img src="{{ '/assets/images/solution-ai.svg' | relative_url }}" alt="Yapay Zeka">
+      <h3>Yapay Zeka ve Analitik</h3>
+      <p>Veri odaklı karar destek sistemleri, makina öğrenimi modelleri ve özelleştirilmiş analiz çözümleri.</p>
       <a class="btn" href="{{ '/solutions' | relative_url }}">Detaylar</a>
     </article>
     <article class="card">
-      <img src="{{ '/assets/images/solution-iot.svg' | relative_url }}" alt="IoT Otomasyon">
-      <h3>IoT Otomasyon</h3>
-      <p>Üretimden sahaya uzanan uçtan uca sensör izleme ve uyarı sistemleri.</p>
+      <img src="{{ '/assets/images/solution-automation.svg' | relative_url }}" alt="Otomasyon">
+      <h3>Otomasyon & Entegrasyon</h3>
+      <p>n8n ve benzeri iş akışı otomasyonları, API entegrasyonları ve süreç otomasyonu.</p>
       <a class="btn" href="{{ '/solutions' | relative_url }}">Detaylar</a>
     </article>
     <article class="card">
-      <img src="{{ '/assets/images/solution-contact.svg' | relative_url }}" alt="Birleşik İletişim">
-      <h3>Birleşik İletişim</h3>
-      <p>Ses, görüntü ve mesajlaşmayı tek bir kurumsal platformda toplayın.</p>
+      <img src="{{ '/assets/images/solution-devops.svg' | relative_url }}" alt="DevOps">
+      <h3>DevOps & Altyapı</h3>
+      <p>Güvenilir dağıtım, CI/CD, GitHub Pages ve bulut altyapı danışmanlığı.</p>
       <a class="btn" href="{{ '/solutions' | relative_url }}">Detaylar</a>
     </article>
   </div>
 </section>
 
-<section class="container section">
-  <h2 class="section-title">Blogdan</h2>
+<section class="container section blog-preview">
+  <h2>Son Yazılar</h2>
   <div class="grid-3 cards">
     {% for post in site.posts limit:3 %}
-    <article class="card">
-      <img src="{{ '/assets/images/blog-cover.svg' | relative_url }}" alt="{{ post.title }}">
+    <article class="card post-card">
+      <img src="{{ post.cover | default: '/assets/images/blog-default.svg' | relative_url }}" alt="{{ post.title }}">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
-      <small>{{ post.date | date: "%d %B %Y" }}</small>
+      <p class="excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+      <small class="muted">{{ post.date | date: "%d %B %Y" }}</small>
     </article>
     {% endfor %}
   </div>

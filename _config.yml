@@ -1,21 +1,20 @@
-title: "Alaaddin Güleç Teknoloji"
+title: "Alaaddin Güleç"
 author: "Alaaddin Güleç"
-description: "Kurumsal teknoloji çözümleri, iletişim ve otomasyon"
+description: "Teknoloji, Yapay Zeka ve Otomasyon üzerine makaleler ve ürün çözümleri"
 baseurl: ""
 url: "https://alaaddingulec.github.io"
 
-social-network-links:
-  email: "alaaddingulec2012@hotmail.com"
-  github: "alaaddingulec"
-  linkedin: "kullaniciadiniz"
-
-# Tema kapalı; kendi layoutlarımızı kullanıyoruz
-remote_theme: null
-
-# Menü
+# Menü (dropdown örneği)
 navbar:
   - title: Çözümler
     url: /solutions
+    children:
+      - title: Bulut Çözümleri
+        url: /solutions#cloud
+      - title: IoT & Otomasyon
+        url: /solutions#iot
+      - title: Yapay Zeka
+        url: /solutions#ai
   - title: Ürünler
     url: /products
   - title: Blog
@@ -24,5 +23,10 @@ navbar:
     url: /about
   - title: İletişim
     url: /contact
+
+social-network-links:
+  email: "alaaddingulec2012@hotmail.com"
+  github: "alaaddingulec"
+  linkedin: "kullaniciadiniz"
 
 paginate: 6

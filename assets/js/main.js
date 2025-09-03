@@ -6,9 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('click', () => menu.classList.toggle('open'));
   }
 
+  // Dropdown for mobile (click-to-open)
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+      if(window.innerWidth <= 680 && e.target.closest('.nav-item')){
+        item.classList.toggle('open');
+      }
+    });
+  });
+
   // Hero slider
-  const slides = document.querySelectorAll('.hero .slide');
-  const dotsWrap = document.querySelector('.hero .dots');
+  const slides = Array.from(document.querySelectorAll('.hero-slider .slide'));
+  const dotsWrap = document.querySelector('.hero-slider .dots');
   if(slides.length && dotsWrap){
     slides.forEach((_, i) => {
       const b = document.createElement('button');
