@@ -1,3 +1,6 @@
+---
+layout: default
+---
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -5,19 +8,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alaaddin Güleç - Kişisel Portfolyo</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 40px; background-color: #f4f4f4; color: #333; }
-        .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1, h2 { color: #0056b3; }
-        a { color: #0056b3; text-decoration: none; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 800px; margin: 30px auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #0056b3; }
+        h1 { text-align: center; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+        a { color: #0056b3; text-decoration: none; font-weight: bold; }
         a:hover { text-decoration: underline; }
+        .post-list { list-style: none; padding: 0; }
+        .post-list li { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .post-list h3 { margin-top: 0; }
+        .post-meta { font-size: 0.9em; color: #666; }
+        .contact p { text-align: center; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Alaaddin Güleç</h1>
-            <p>Yazılım Geliştirici | Otomasyon Uzmanı</p>
+            <p style="text-align: center; font-style: italic;">Yazılım Geliştirici | Otomasyon ve Yapay Zeka Meraklısı</p>
         </header>
+
         <section>
             <h2>Hakkımda</h2>
             <p>
@@ -26,17 +36,24 @@
                 Bu sitede çalışmalarımı ve projelerimi sizlerle paylaşıyorum.
             </p>
         </section>
+
         <section>
-            <h2>Projelerim</h2>
-            <ul>
-                <li><strong>Apartman Yönetim Sistemi:</strong> Python ve Streamlit kullanarak geliştirdiğim, aidat ve borç takibini otomatikleştiren bir uygulama.</li>
-                <li><strong>n8n ile Otomasyonlar:</strong> E-posta işleme, veri çekme ve raporlama gibi görevleri otomatikleştiren iş akışları.</li>
-                </ul>
+            <h2>Son Yazılarım</h2>
+            <ul class="post-list">
+                {% for post in site.posts %}
+                    <li>
+                        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                        <p class="post-meta">{{ post.date | date: "%d %B %Y" }}</p>
+                        {{ post.excerpt }}
+                    </li>
+                {% endfor %}
+            </ul>
         </section>
-        <section>
+
+        <section class="contact">
             <h2>Bana Ulaşın</h2>
             <p>
-                Benimle <a href="mailto:alaaddingulec2012@hotmail.com">e-posta</a> yoluyla veya <a href="https://www.linkedin.com/in/kullanici-adiniz" target="_blank">LinkedIn</a> üzerinden iletişime geçebilirsiniz.
+                Benimle <a href="mailto:alaaddingulec2012@hotmail.com">e-posta</a> yoluyla veya <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> üzerinden iletişime geçebilirsiniz.
             </p>
         </section>
     </div>
