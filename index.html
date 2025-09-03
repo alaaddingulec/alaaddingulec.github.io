@@ -1,50 +1,73 @@
 ---
-layout: page
-title: Alaaddin Güleç - Teknoloji ve Otomasyon
+layout: default
+title: Ana Sayfa
 ---
 
 <style>
-  .hero-section {
+  body { font-family: 'Segoe UI', sans-serif; }
+
+  /* Hero */
+  .hero {
     text-align: center;
-    padding: 70px 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    margin-bottom: 40px;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    color: white;
   }
-  .hero-section h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: #343a40;
+  .hero h1 { font-size: 3rem; margin-bottom: 15px; }
+  .hero p { font-size: 1.2rem; opacity: 0.9; }
+
+  /* Kayan Haberler */
+  .news-ticker {
+    background: #f8f9fa;
+    padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
   }
-  .hero-section p {
-    font-size: 1.3em;
-    color: #6c757d;
-    max-width: 600px;
-    margin: 0 auto;
+  .news-ticker span {
+    display: inline-block;
+    padding-right: 50px;
+    animation: ticker 15s linear infinite;
   }
-  .latest-posts-title {
-      text-align: center;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 15px;
-      margin-bottom: 30px;
+  @keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
   }
+
+  /* Blog Kartları */
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+  }
+  .post-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform .3s;
+  }
+  .post-card:hover { transform: translateY(-5px); }
 </style>
 
-<div class="hero-section">
-  <h1>Merhaba, ben Alaaddin.</h1>
-  <p>Teknoloji ve otomasyonla fikirleri hayata geçiriyorum. Bu sitede, yazılım dünyasındaki yolculuğumu ve projelerimi paylaşıyorum.</p>
+<div class="hero">
+  <h1>Merhaba, ben Alaaddin</h1>
+  <p>Yazılım, otomasyon ve teknoloji üzerine notlar paylaşıyorum.</p>
 </div>
 
-{% include image-slider.html %}
-
-<h2 class="latest-posts-title">Son Yazılarım</h2>
-
-<ul class="post-list">
+<div class="news-ticker">
   {% for post in site.posts limit:5 %}
-    <li>
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p class="post-meta">{{ post.date | date: "%d %B %Y" }}</p>
-      {{ post.excerpt }}
-    </li>
+    <span>{{ post.date | date: "%d %B %Y" }} — {{ post.title }}</span>
   {% endfor %}
-</ul>
+</div>
+
+<h2>Son Yazılarım</h2>
+<div class="posts">
+  {% for post in site.posts limit:6 %}
+    <div class="post-card">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+      <small>{{ post.date | date: "%d %B %Y" }}</small>
+    </div>
+  {% endfor %}
+</div>
