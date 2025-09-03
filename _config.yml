@@ -1,6 +1,6 @@
-title: "Alaaddin Güleç"
+title: "Alaaddin Güleç Teknoloji"
 author: "Alaaddin Güleç"
-description: "Yazılım, Otomasyon ve Teknoloji Üzerine Notlar"
+description: "Kurumsal teknoloji çözümleri, iletişim ve otomasyon"
 baseurl: ""
 url: "https://alaaddingulec.github.io"
 
@@ -9,12 +9,20 @@ social-network-links:
   github: "alaaddingulec"
   linkedin: "kullaniciadiniz"
 
+# Tema kapalı; kendi layoutlarımızı kullanıyoruz
 remote_theme: null
 
-navbar-links:
-  - title: Ana Sayfa
-    url: /
-  - title: Hakkımda
+# Menü
+navbar:
+  - title: Çözümler
+    url: /solutions
+  - title: Ürünler
+    url: /products
+  - title: Blog
+    url: /blog
+  - title: Hakkımızda
     url: /about
+  - title: İletişim
+    url: /contact
 
-paginate: 5
+paginate: 6

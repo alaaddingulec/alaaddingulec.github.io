@@ -1,13 +1,13 @@
 <header class="site-header">
-  <div class="container">
-    <h1 class="logo"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-    <nav class="navbar">
+  <div class="container nav">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button class="menu-toggle" aria-label="Menüyü aç/kapat">☰</button>
+    <nav class="menu">
       <ul>
-        {% for link in site.navbar-links %}
-          <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+        {% for item in site.navbar %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
         {% endfor %}
       </ul>
-      <button class="menu-toggle">☰</button>
     </nav>
   </div>
 </header>

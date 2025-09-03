@@ -1,14 +1,25 @@
 <footer class="site-footer">
-  <div class="container">
-    <p>© {{ site.time | date: "%Y" }} {{ site.author }} · Tüm Hakları Saklıdır</p>
-    <div class="social-links">
-      {% if site.social-network-links.github %}
-        <a href="https://github.com/{{ site.social-network-links.github }}" target="_blank">GitHub</a>
-      {% endif %}
-      {% if site.social-network-links.linkedin %}
-        <a href="https://linkedin.com/in/{{ site.social-network-links.linkedin }}" target="_blank">LinkedIn</a>
-      {% endif %}
-      <a href="mailto:{{ site.social-network-links.email }}">E-Posta</a>
+  <div class="container footer-grid">
+    <div>
+      <h4>{{ site.title }}</h4>
+      <p class="muted">Kurumsal iletişim, otomasyon ve yazılım projeleri.</p>
+    </div>
+    <div>
+      <h5>Bağlantılar</h5>
+      <ul class="links">
+        <li><a href="{{ '/solutions' | relative_url }}">Çözümler</a></li>
+        <li><a href="{{ '/products' | relative_url }}">Ürünler</a></li>
+        <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+        <li><a href="{{ '/about' | relative_url }}">Hakkımızda</a></li>
+        <li><a href="{{ '/contact' | relative_url }}">İletişim</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>İletişim</h5>
+      <p><a href="mailto:{{ site.social-network-links.email }}">{{ site.social-network-links.email }}</a></p>
+      <p><a target="_blank" href="https://github.com/{{ site.social-network-links.github }}">GitHub</a></p>
+      <p><a target="_blank" href="https://linkedin.com/in/{{ site.social-network-links.linkedin }}">LinkedIn</a></p>
     </div>
   </div>
+  <div class="container tiny muted">© {{ site.time | date: "%Y" }} {{ site.author }}</div>
 </footer>

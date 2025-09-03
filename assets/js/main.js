@@ -1,43 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Menü aç-kapa
-  const toggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".navbar ul");
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile menu toggle
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+  if(toggle && menu){
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
   }
 
-  // Slider otomatik geçiş
-  const slides = document.querySelectorAll(".slider .slide");
-  let current = 0;
-  setInterval(() => {
-    if (slides.length > 0) {
-      slides[current].classList.remove("active");
-      current = (current + 1) % slides.length;
-      slides[current].classList.add("active");
-    }
-  }, 4000);
-
-  // Typing effect
-  const typingText = "Teknoloji · Yazılım · Otomasyon";
-  let i = 0;
-  function typeWriter() {
-    if (i < typingText.length) {
-      document.querySelector(".typing").innerHTML += typingText.charAt(i);
-      i++;
-      setTimeout(typeWriter, 120);
-    }
-  }
-  typeWriter();
-
-  // Scroll fade-in
-  window.addEventListener("scroll", () => {
-    document.querySelectorAll(".fade-in").forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        el.classList.add("visible");
-      }
+  // Hero slider
+  const slides = document.querySelectorAll('.hero .slide');
+  const dotsWrap = document.querySelector('.hero .dots');
+  if(slides.length && dotsWrap){
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(b);
     });
-  });
+    let current = 0;
+    function go(i){
+      slides[current].classList.remove('active');
+      dotsWrap.children[current].classList.remove('active');
+      current = i;
+      slides[current].classList.add('active');
+      dotsWrap.children[current].classList.add('active');
+    }
+    function next(){ go((current + 1) % slides.length); }
+    go(0);
+    setInterval(next, 5000);
+  }
 });

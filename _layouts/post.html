@@ -1,9 +1,15 @@
 ---
 layout: default
 ---
-
-<article class="post">
-  <h1>{{ page.title }}</h1>
-  <p><small>{{ page.date | date: "%d %B %Y" }}</small></p>
-  <div class="post-content">{{ content }}</div>
+<article class="container article">
+  <header class="article-head">
+    <h1>{{ page.title }}</h1>
+    <p class="muted">{{ page.date | date: "%d %B %Y" }}</p>
+    {% if page.cover %}
+      <img class="cover" src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
+    {% endif %}
+  </header>
+  <div class="content">
+    {{ content }}
+  </div>
 </article>

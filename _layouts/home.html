@@ -2,23 +2,52 @@
 layout: default
 ---
 
-<section class="hero">
-  <h1 class="typing"></h1>
-  <p>Blog yazılarımda teknoloji ve otomasyon dünyasını paylaşıyorum.</p>
+{% include hero-slider.html %}
+
+<section class="strip stats">
+  <div class="container grid-4">
+    <div><h3>20+</h3><p>Kurumsal Proje</p></div>
+    <div><h3>10K+</h3><p>Aktif Kullanıcı</p></div>
+    <div><h3>99.9%</h3><p>Uptime</p></div>
+    <div><h3>7/24</h3><p>Destek</p></div>
+  </div>
 </section>
 
-{% include slider.html %}
-{% include news-ticker.html %}
+<section class="container section">
+  <h2 class="section-title">Öne Çıkan Çözümler</h2>
+  <div class="grid-3 cards">
+    <article class="card">
+      <img src="{{ '/assets/images/solution-uc.svg' | relative_url }}" alt="Çağrı Merkezi Çözümü">
+      <h3>IP Çağrı Merkezi</h3>
+      <p>Ölçeklenebilir VoIP altyapısı, IVR ve akıllı yönlendirme ile müşteri deneyimini iyileştirin.</p>
+      <a class="btn" href="{{ '/solutions' | relative_url }}">Detaylar</a>
+    </article>
+    <article class="card">
+      <img src="{{ '/assets/images/solution-iot.svg' | relative_url }}" alt="IoT Otomasyon">
+      <h3>IoT Otomasyon</h3>
+      <p>Üretimden sahaya uzanan uçtan uca sensör izleme ve uyarı sistemleri.</p>
+      <a class="btn" href="{{ '/solutions' | relative_url }}">Detaylar</a>
+    </article>
+    <article class="card">
+      <img src="{{ '/assets/images/solution-contact.svg' | relative_url }}" alt="Birleşik İletişim">
+      <h3>Birleşik İletişim</h3>
+      <p>Ses, görüntü ve mesajlaşmayı tek bir kurumsal platformda toplayın.</p>
+      <a class="btn" href="{{ '/solutions' | relative_url }}">Detaylar</a>
+    </article>
+  </div>
+</section>
 
-<section class="latest-posts fade-in">
-  <h2>Son Yazılarım</h2>
-  <div class="posts">
-    {% for post in site.posts limit:6 %}
-      <article class="post-card fade-in">
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
-        <small>{{ post.date | date: "%d %B %Y" }}</small>
-      </article>
+<section class="container section">
+  <h2 class="section-title">Blogdan</h2>
+  <div class="grid-3 cards">
+    {% for post in site.posts limit:3 %}
+    <article class="card">
+      <img src="{{ '/assets/images/blog-cover.svg' | relative_url }}" alt="{{ post.title }}">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+      <small>{{ post.date | date: "%d %B %Y" }}</small>
+    </article>
     {% endfor %}
   </div>
+  <div class="center"><a class="btn secondary" href="{{ '/blog' | relative_url }}">Tüm Yazılar</a></div>
 </section>
