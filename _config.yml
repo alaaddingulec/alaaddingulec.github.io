@@ -4,16 +4,13 @@ description: "Yazılım, Otomasyon ve Teknoloji Üzerine Notlar"
 baseurl: ""
 url: "https://alaaddingulec.github.io"
 
-# Sosyal Medya
 social-network-links:
   email: "alaaddingulec2012@hotmail.com"
   github: "alaaddingulec"
   linkedin: "kullaniciadiniz"
 
-# Tema
 remote_theme: null
 
-# Menü Linkleri
 navbar-links:
   - title: Ana Sayfa
     url: /

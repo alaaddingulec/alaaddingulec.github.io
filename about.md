@@ -1,16 +1,14 @@
 ---
-layout: page
+layout: default
 title: Hakkımda
 ---
 
 ## Merhaba, ben Alaaddin Güleç!
 
-Burası sizin hakkınızda daha detaylı bilgi verebileceğiniz bir alan.
+Yazılım, otomasyon ve teknoloji üzerine notlar paylaşıyorum.
 
 **Yeteneklerim:**
 * Python
 * Streamlit
 * n8n Otomasyonları
-* Web Geliştirme Temelleri
-
-Benimle iletişime geçmekten çekinmeyin!
+* Web Geliştirme

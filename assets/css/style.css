@@ -1,13 +1,32 @@
-body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f8f9fa; color: #333; }
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #ecf0f1; color: #2c3e50; }
+a { color: #3498db; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
 .container { max-width: 1100px; margin: auto; padding: 0 20px; }
-.site-header, .site-footer { background: #343a40; color: white; padding: 15px 0; }
-.logo a { color: white; text-decoration: none; }
-.navbar ul { list-style: none; display: flex; gap: 15px; }
-.hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg,#4e73df,#1cc88a); color: white; }
+
+.site-header, .site-footer { background: #2c3e50; color: white; padding: 15px 0; }
+.site-header .logo a { color: white; font-size: 1.4rem; }
+
+.navbar ul { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
+.navbar ul li a { color: white; font-weight: bold; }
+.navbar ul li a:hover { color: #3498db; }
+.menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; }
+
+.hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg,#3498db,#1cc88a); color: white; }
+
 .slider { max-width: 1200px; margin: 30px auto; position: relative; overflow: hidden; border-radius: 10px; }
 .slider img { width: 100%; display: block; }
-.news-ticker { background: #eee; padding: 10px; font-size: 0.9rem; }
+.slide { position: absolute; opacity: 0; transition: opacity .8s; }
+.slide.active { opacity: 1; position: relative; }
+
+.news-ticker { background: #bdc3c7; padding: 10px; font-size: 0.9rem; }
+
 .posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; margin: 40px 0; }
 .post-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 .post-card:hover { transform: translateY(-5px); transition: .3s; }
 
+@media (max-width: 768px) {
+  .navbar ul { display: none; flex-direction: column; background: #2c3e50; position: absolute; right: 20px; top: 60px; padding: 10px; border-radius: 8px; }
+  .navbar ul.active { display: flex; }
+  .menu-toggle { display: block; }
+}
