@@ -1,1 +1,14 @@
-
+<footer class="site-footer">
+  <div class="container">
+    <p>© {{ site.time | date: "%Y" }} {{ site.author }} · Tüm Hakları Saklıdır</p>
+    <div class="social-links">
+      {% if site.social-network-links.github %}
+        <a href="https://github.com/{{ site.social-network-links.github }}" target="_blank">GitHub</a>
+      {% endif %}
+      {% if site.social-network-links.linkedin %}
+        <a href="https://linkedin.com/in/{{ site.social-network-links.linkedin }}" target="_blank">LinkedIn</a>
+      {% endif %}
+      <a href="mailto:{{ site.social-network-links.email }}">E-Posta</a>
+    </div>
+  </div>
+</footer>
