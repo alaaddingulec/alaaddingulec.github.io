@@ -1,19 +1,17 @@
-# Site Ayarları
-title: Alaaddin Güleç
-author: Alaaddin Güleç
-description: >-
-  Yazılım, Otomasyon ve Teknoloji Üzerine Notlar
-baseurl: "" # Siteniz ana dizinde olduğu için bu boş kalmalı
-url: "https://alaaddingulec.github.io" # Sitenizin adresi
+title: "Alaaddin Güleç"
+author: "Alaaddin Güleç"
+description: "Yazılım, Otomasyon ve Teknoloji Üzerine Notlar"
+baseurl: ""
+url: "https://alaaddingulec.github.io"
 
-# Sosyal Medya Linkleri (İsteğe bağlı, kendinize göre düzenleyin)
+# Sosyal Medya
 social-network-links:
   email: "alaaddingulec2012@hotmail.com"
   github: "alaaddingulec"
-  linkedin: "kullaniciadiniz" # Kendi LinkedIn kullanıcı adınızı yazın
+  linkedin: "kullaniciadiniz"
 
-# Tema Ayarları
-remote_theme: "daattali/beautiful-jekyll" # Bu satır temayı yüklüyor
+# Tema
+remote_theme: null
 
 # Menü Linkleri
 navbar-links:
@@ -22,5 +20,4 @@ navbar-links:
   - title: Hakkımda
     url: /about
 
-# Sayfalama Ayarı
 paginate: 5
