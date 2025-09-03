@@ -1,29 +1,48 @@
 ---
-layout: home
-title: Ana Sayfa
+layout: page
+title: Alaaddin Güleç - Teknoloji ve Otomasyon
 ---
 
-<div id="main" class="s-content__main">
-    <section class="s-content__content">
-        <h2 id="hakk-mda">Hakkımda</h2>
-        <p>
-            Merhaba! Ben Alaaddin. Teknolojiye ve otomasyon süreçlerine büyük bir tutkuyla bağlıyım.
-            Karmaşık problemleri çözmek ve verimli sistemler oluşturmak en büyük motivasyonum.
-            Bu sitede çalışmalarımı ve projelerimi sizlerle paylaşıyorum.
-        </p>
-    </section>
+<style>
+  .hero-section {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 40px;
+  }
+  .hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #343a40;
+  }
+  .hero-section p {
+    font-size: 1.3em;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .latest-posts-title {
+      text-align: center;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+  }
+</style>
 
-    <hr>
-
-    <section class="s-content__content">
-        <h2>Son Yazılarım</h2>
-        <ul class="post-list">
-            {% for post in site.posts limit:5 %}
-                <li>
-                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                    <p class="post-meta">{{ post.date | date: "%d %B %Y" }}</p>
-                </li>
-            {% endfor %}
-        </ul>
-    </section>
+<div class="hero-section">
+  <h1>Merhaba, ben Alaaddin.</h1>
+  <p>Teknoloji ve otomasyonla fikirleri hayata geçiriyorum. Bu sitede, yazılım dünyasındaki yolculuğumu ve projelerimi paylaşıyorum.</p>
 </div>
+
+<h2 class="latest-posts-title">Son Yazılarım</h2>
+
+<ul class="post-list">
+  {% for post in site.posts limit:5 %}
+    <li>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="post-meta">{{ post.date | date: "%d %B %Y" }}</p>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
