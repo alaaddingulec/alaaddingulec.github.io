@@ -18,4 +18,26 @@ document.addEventListener("DOMContentLoaded", () => {
       slides[current].classList.add("active");
     }
   }, 4000);
+
+  // Typing effect
+  const typingText = "Teknoloji · Yazılım · Otomasyon";
+  let i = 0;
+  function typeWriter() {
+    if (i < typingText.length) {
+      document.querySelector(".typing").innerHTML += typingText.charAt(i);
+      i++;
+      setTimeout(typeWriter, 120);
+    }
+  }
+  typeWriter();
+
+  // Scroll fade-in
+  window.addEventListener("scroll", () => {
+    document.querySelectorAll(".fade-in").forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.classList.add("visible");
+      }
+    });
+  });
 });

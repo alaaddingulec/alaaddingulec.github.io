@@ -3,18 +3,18 @@ layout: default
 ---
 
 <section class="hero">
-  <h1>Merhaba, ben Alaaddin 👋</h1>
-  <p>Teknoloji, yazılım ve otomasyon ile projeler geliştiriyorum.</p>
+  <h1 class="typing"></h1>
+  <p>Blog yazılarımda teknoloji ve otomasyon dünyasını paylaşıyorum.</p>
 </section>
 
 {% include slider.html %}
 {% include news-ticker.html %}
 
-<section class="latest-posts">
+<section class="latest-posts fade-in">
   <h2>Son Yazılarım</h2>
   <div class="posts">
     {% for post in site.posts limit:6 %}
-      <article class="post-card">
+      <article class="post-card fade-in">
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
         <small>{{ post.date | date: "%d %B %Y" }}</small>
